@@ -1,0 +1,26 @@
+#todos {
+    display: grid;
+    align-items: center;
+    width: 100%;
+}
+
+
+div[id^="task"] {
+    display: grid;
+    grid-template-columns: 100px 100px 30px;
+    grid-template-rows: 50px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+#tasks {
+    display: grid;
+    grid-template-columns: 200px;
+
+}
+
+#filters {
+    display: grid;
+    grid-template-columns: 100px 50px 50px 50px;
+    padding-bottom: 10px;
+}
