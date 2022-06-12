@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Week 8 Notes</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Week 8 Notes</h1>
+        <h2>Transforms</h2>
+        <p>Transform allows us to be able to translate, rotate, scale and skew any element. It works on CSS3 so it will not work with older versions of any browser.</p>
+        <h2>Translation</h2>
+        <p>It allows us to move an element to any direction, similar to position: relative, but it does not affect the other elements (which we have to be careful about). It uses x and y values to be able to know where to move the element. A positive x means moving it to the right, negative values for x mean moving the element to the left. Positive y value moves it up and negative y value moves it down.
+        If we need to use it on an older browser version we can include -webkit-transform (Older mobile browsers) and -ms-transform (IE9).
+        Transforms do not work on inline elements, so we may need to add “display: inline-block”.</p>
+        <h2>Scaling</h2> 
+        <p>Scaling allows us to make an element bigger or smaller, and we can change the weight and height values separately or tighter (if only give it one value, then it will increase or decrease the height and weight together)
+        The center always stays the same, no matter how big we make the element, and because of this we may have some overlapping between the element we are scaling and the elements close to it. In those cases, we may want to use the height, width and font-size attributes instead of scale.</p>
+        <h2>Rotation</h2>
+        <p>Rotate an element around the point of origin. It can be clockwise and counterclockwise. For clockwise use a positive value, and a negative value for counterclockwise.
+        Here is important to remember that the order we use our transform options we need to be careful. For example in this case we can rotate, translate and scale at the same time:
+        .ad-ad2 h1:hover span {
+            color: #484848;
+            transform: rotate(10deg) translateX(40px) scale(1.5);
+        }
+        That means that the element will rotate before moving to the right. If we, do it the other way around the result will be different than what we were expecting.
+        </p>
+        <h2>Skew</h2>
+        <p>It allows us to incline or decline an element on both the x and the y axes. We have to tell it how many degrees we want to skew an element. 
+        transform: skew(15deg, 4deg);
+        For all of the transforms we read about, each have an x and y version, like skewX() and skewY().</p>
+        <h2>Changing the Origin of the Transform</h2>
+        <p>The transform-origin property allows us to move the origin of the element. For example, if we rotate a circle, it will never really change from the point of view of the user. However, if we use the transform-origin property it will produce a result where the element will transform but also look like it was created on a different origin point.
+        We have to tell it the movement of the origin using percentage values.</p>
+        <h2>Support for Internet Explorer 8 and Earlier</h2>
+        <p>There is no support for older versions but there are ways to mimic the effects that transform has.
+        For example, using position: relative:
+        .translate {
+            position: relative;
+            top: 200px;
+            left: 200px;
+        }
+        Scaling is also possible if we play with the width and height properties.
+        </p>
+        <h2>Transitions</h2>
+        <p>Instead of consuming a lot of resources animating using Javascript, animations using CSS provide a lower client-side processing requirement. For IE, transitions are only supported from IE10 and new versions. 
+        Transitions change the CSS values over time. It can change the color of an element as fast or as slow as we want. The idea is to provide graduality to any change on properties. One good way to show how it works is by animating the transforms we read about before.
+        When a transition needs to happen, the browser will apply it by changing the property gradually.
+        The change can be triggered by different things, like javascript or hover an element.
+        The steps to create a simple transition using CSS are:
+        1.	Declare the original state of the element. Meaning that we need to tell CSS how the element should look like before the transition.
+        2.	Declare the final state based on what may cause the change, like :hover.
+        3.	Include transition functions that will tell CSS how we would like the transition to happen.
+        The transition is declared in the default or the originating state.
+        The transition-property property tells CSS what properties of an element will transition. If we use “all” then all properties will be default.
+        Any property that can have a middle point can be transitioned. Changing size or color will have a midpoint value that will help us create a transition and not only change the value from one to another, like hover over an span works on basic CSS.
+        Border-style doesn’t really transition since we can take a solid line and make it a dashed line since it will only change from one to another in a short moment.
+        There is an exception to this rule when we talk about an element going from hidden to visible and vice versa. 
+        </p>
+        <h2>The transition-duration property</h2>
+        <p>It sets how long a transition would take to complete, meaning how long it will take to go from the default state to the transitioned state. You can use seconds and milliseconds.
+        200ms is the optimal value. For older browser the transition will still happen but it will be an automatic change instead of a transition.
+        </p>
+        <h2>The transition-timing-function property</h2>
+        <p>It allows us to have a more granular control over how the speed of the transition will work. For example, we can have it starting slow and ending fast.
+        For example, using the value ease will make it start slow, speed up and then end slow. 
+        Ease-in-out does the same thing as ease but it has a faster start. Linear has a constant speed. Ease-in starts slow, speeds up and finish abruptly. Ease-out does the opposite because it starts really fast and the slows down.
+        The steps function allows us to divide the transition between equidistant steps, and define the direction of the start and end.
+        </p>
+        <h2>The tranaition-delay property</h2>
+        <p>It allows us to introduce a delay before the transition starts. That delay could help us prevent that an animation starts only because a user hover over an element for a second.
+        </p>
+        <h2>Transition Shorthand property</h2>
+        <p>Instead of creating a line for every property for a transition we can combine all the options in one line by using the transition property.
+        </p>
+        <h2>Animations</h2>
+        <p>The limitation on the transitions is that it doesn’t allow for a control over each step of the animation. In case we want to have a better control over each step we are better off using animations.
+        They are based on keyframes, where a keyframe is a snapshot that defines the start and end point of any transition. CSS transitions are limited to only two keyframes: start and ending. CSS animations allows us to add any number of keyframes. 
+        </p>
+        <h2>Keyframes</h2>
+        <p>First, we create an animation and then we associate the animation with an element. The way to define an animation is to use @keyframe followed by a name.
+        Inside the @keyframe definition we use the terms from and to, to define the 0% and 100% states of the animation. But we can use any value in between. 
+        </p>
+        <h2>Animation properties</h2>
+        <p>Animation-name is the property that links an element with an animation that was already defined.
+        Animation-duration defines the time it will take for the animation to go from 0% to 100%.
+        Animation-name is the only one required, but duration is also necessary because without it the animation will be imperceptible.
+        The animation-timing-function follows the same principle as the transition-timing-function. 
+        Animation-iteration-count defines how many times the animation will play. Infinite is an option.
+        Animation-direction allows for a reverse animation. Alternate will run the animation from 0% to 100% and then in reverse.
+        Animation-delay allows to set a time of how long the browser will wait before starting the animation.
+        Animation-fill-mode defines what happens before the first animation iteration and after the last animation iteration happen. 
+        </p>
+        <h2>Shorthand animation property</h2>
+        <p>Just like with the transitions, you can define all the properties for an animation in one line.</p>
+        <h2>Canvas</h2>
+        <p>It’s the Canvas API that allows us to draw anything we want.</p>
+        <h2>Creating a canvas element</h2>
+        <p>It’s a HTML tag called "canvas"
+        You can add a text value between canvas and /canvas that will show up only if canvas is not supported in the browser.
+        To use canvas with JavaScript we give it an ID or Class.
+        It takes the width and height values.
+        By default the width is 300 and height is 150.
+        </p>
+        <h2>Drawing on the Canvas</h2>
+        <p>All drawing happens using the Canvas Javascript API
+        After creating a canvas element we should get the context, for example 2d.
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+        To fill the brush with color we use strokeStyle or fillStyle:
+        context.strokeStyle = "red";
+        We can use color names or we can use rgb values. Even rgba.
+        </p>
+        <h2>Drawing a rectangle in Canvas</h2>
+        <p>We use the properties fillRect or strokeRect:
+        context.fillRect(10, 10, 100, 100);   
+        context.strokeRect(10, 10, 100, 100);
+        The stroke defines the border’s color and the fill the inside color of the rectangle.
+        </p>
+        <h2>The Canvas coordinate system</h2>
+        <p>It starts on the top-left corner and ends on the bottom-right. If it’s a 200 by 200 square then the bottom-right coordinate will be 200,200.
+        </p>
+        <h2>Variations of fillStyle</h2>
+        <p>We can use canvasGradient and CanvasPattern objects. CanvasPattern uses CreatePattern function to create an image based on a pattern of something else. It has two parameters: an image and how the image should repeat.
+        For CanvasGradient we use createLinearGradient and createRadialGradient. We tell them the start and end colors.
+        </p>
+        <h2>SVG</h2>
+        <p>It allows use to create graphics using XML. It uses the svg tag and uses viewBox as a way to define location, width, and height.
+        Inside the SVG element we can create multiple elements to draw, like a rectangle.
+        </p>
+        <h1>Questions:</h1>
+        <p>Are SVGs more CPU-intensive than using image files?
+            <br>
+        When would be a good idea to use images instead of creating our own SVGs?
+        <br>
+        Can we use Javascript to transition an SVG?
+        </p>
+
+
+
+
+    </body>
+</html>
