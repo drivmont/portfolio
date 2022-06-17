@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Week 9 Notes</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <p><h1> Week 9 notes </h1><br>
+            <h2> The browser object model</h2><br>
+            Every browser, window, tab and iframe has a window object and the BOM allows us to get information about those objects.<br>
+            <h2> Global</h2><br>
+            Just like in JavaScript where a global variable is accessible in any part of the code, we have a global object in the BOM that is called a window and every property of that window is a global variable.<br>
+            <h2> Dialogs</h2><br>
+            There are three functions that we already use that are part of the window object: alert, confirm and prompt.<br>
+            The alert function pauses the execution of the program and displays a message. <br>
+            The confirm function stops the execution and display a confirmation dialog. <br>
+            The window function stops the program and shows a dialog with a text and expects an input.<br>
+            <h2> Browser information</h2><br>
+            The window object has a property called navigator that references a navigator object. That object has the information about the browser being used.<br>
+            Useragent provides information about the browser version and OS. However, this information can be modified.<br>
+            <h2> Location</h2><br>
+            The location property is an object that knows about the URL of the page. For example href returns the full URL as a string. This value can be changed.<br>
+            The protocol property returns the layer 7 protocol being used on this communication.<br>
+            The host property returns the domain of the URL and port number.<br>
+            The port property returns the port number only if it&rsquo;s part of the URL.<br>
+            Pathname returns the path after the domain.<br>
+            Search returns the query string parameters. <br>
+            Hash returns the fragment identifier.<br>
+            Origin returns the protocol plus the FQDN.<br>
+            The location object also has the reload and the assign methods. Reload for a page reload and can force the reload to come from the server and the cached info. Assign allows to load resources from a provided URL.<br>
+            Replace and tostring are other two methods of the location object. Replace does the same thing as assign except that the current page won&rsquo;t be stored and won&rsquo;t allow the user to get back to it. Tostring will return the full URL.<br>
+            <h2> Browser History</h2><br>
+            The window history property allows to look for any visited page in the current session. The length property shows how many sites were visited and the go method allows us to go to any of those pages.<br>
+            <h2> Controlling windows</h2><br>
+            We can use the open and close methods to open and close pages as well as the moveto method that will move the page based on the coordinates we give it.<br>
+            Resizeto allows us to resize a page.<br>
+            <h2> Screen information</h2><br>
+            The screen object can find the dimensions of the page based on the screen size. Using height and width as variables.<br>
+            Availheight and availwidth finds the max size of the screen.<br>
+            Colordepth property gets us the color bit depth of the monitor.<br>
+            These are more useful on mobile.<br>
+            <h2> Document object</h2><br>
+            There is one for every window and helps dealing with the page being loaded. This what we have been using on javascript to manipulate the website objects.<br>
+            There is the write method that adds a string of text to the page.<br>
+            This string can be HTML code. <br>
+            <h2> Cookies</h2><br>
+            Files that are stored in the user&rsquo;s computer. It helps the browser remember things about a site that we visited before. They can only be read by a site with the same domain that stored them. It&rsquo;s use to customize and personalize the user&rsquo;s experience on a website.<br>
+            <h2> Creating Cookies</h2><br>
+            You can create a cookie using document.cookie = any value that you want. This property only keeps piling up the new cookies that you add.<br>
+            <h2> Changing Cookie values</h2><br>
+            We can change the value by simply using the same variable name and giving it a new value.<br>
+            <h2> Reading cookies</h2><br>
+            Document.cookie will show the current value of all cookies.<br>
+            The split method and a for loop will allow to see each value on it&rsquo;s own.<br>
+            <h2> Cookie expiry dates</h2><br>
+            They are session based so once the sessions is finished the cookies are deleted. They can be persistent by adding expires=date at the end of the cookie and giving that a valid value. It can also use max-age.<br>
+            <h2> The path and domain of cookies</h2><br>
+            They can only be read by the same domain but they can be changed using the path= value and domai= value<br>
+            <h2> Secure Cookies</h2><br>
+            Adding secure to the end of the cookie makes it only transmittible over HTTPs.<br>
+            <h2> Deleting cookies</h2><br>
+            To remove a cookie, we setup the expire value to a date in the past.<br>
+            <h2> Timing functions</h2><br>
+            They help with scheduling actions. Settimeout accepts a callback to a function and an amount of time before executing that function. We can cancel it using clearTimeout.<br>
+            Setinterval is similar to settimeout except that it will invoke the callback every given amount of time.<br>
+            Clearinterval will stop it.<br>
+            <h2> Animation</h2><br>
+            Settimeout and setinterval can be used to animate elements. But now we can use requestanimationframe which animate things more smoothly. <br>
+            This method acts the same way as setinterval but it optimizes its performance. It doesn&rsquo;t run the animation if the tab is inactive and uses built-in graphics-handling capabilities from the browser.<br>
+            <h2> The data- attribute</h2><br>
+            It&rsquo;s information that we can embed in a we page so that Javascript can use it without really adding content to the user. We can add anything as long as it starts with data-.<br>
+            We can sue them to identify other elements. <br>
+            <h2> HTML5 APIs</h2><br>
+            It uses the API to gain access to the hardware like the camera. <br>
+            <h2> HTML5 Web Storage</h2><br>
+            Similar to the cookies with less restrictions, we get a key-value store in the client&rsquo;s computer and we have the advantages that it won&rsquo;t share the information with the server, it can be use on multiple windows of the same domain and the storage doesn&rsquo;t have a limit. The information won&rsquo;t automatically expire.<br>
+            The web storage is support if the windows object has the localstorage property. But these are saved as key-value pairs.<br>
+            Similarly we have the sessionStorage that saves info for the current session.<br>
+            To save a value we use setItem and to read it we use getitem<br>
+            To remove a value we use removeItem and only provide the name of the value. Finally clear method will remove everything from the storage.<br>
+            Every time we change a value there is an event that happens and we can get info from the event, like the oldvalue and the newvalue.<br>
+            <h2> Geolocation</h2><br>
+            It&rsquo;s an API that shows the location of the device. It uses the navigator object. We use getcurrentposition to get the information on the user&rsquo;s location.<br>
+            We can get the speed, altitude, latitude, longitude, timestamp and heading of the user. <br>
+            The watchPosition method allows to get an update everytime the position changes.<br>
+            <h2> Web Workers</h2><br>
+            This allows process to run on the background. We can use it to run a js file.<br>
+            It can also work on functions of the same file.<br>
+            <h2> Websockets</h2><br>
+            They allow for a two-way communication nwith the server and can keep communicating and updating the client without the need to reload a page.<br>
+            Websockets use the wss protocol instead of https. <br>
+            <h2>Notifications</h2><br>
+            Shows system notifications but only possible if the users allow them.<br>
+            <h2>Multimedia</h2><br>
+            HTML5 has the video and audio tags and now we can insert them directly to our code. For the video we have methods like: play, pause, volume, muted, currentTime, playbackrate, loop, duration.<br>
+            <h2>Drawing with Canvas</h2><br>
+            We can use 3d or 2d depending on what we assign to the getContext method.<br>
+            <h2>Questions</h2><br>
+            When would be a good idea to add HTML code using the document.write method?<br>
+            Does the requestAnimationFrame method has a way to limit the number of times the animation will happen? Or do we just customize the function where we call this method so that it runs for a limited number of times?<br>
+            </p>
+            
+
+    </body>
+</html>
