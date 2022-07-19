@@ -1,0 +1,114 @@
+[
+        {
+            "name": "Baltimore/Washington International Airport",
+            "code": "BWI"
+        },
+        {
+            "name": "Charlotte Douglas International Airport",
+            "code": "CLT"
+        },
+        {
+            "name": "Dallas/Fort Worth International Airport",
+            "code": "DFW"
+        },
+        {
+            "name": "Denver International Airport",
+            "code": "DEN"
+        },
+        {
+            "name": "Detroit Metropolitan Airport",
+            "code": "DTW"
+        },
+        {
+            "name": "Fort Lauderdale Hollywood International Airport",
+            "code": "FLL"
+        },
+        {
+            "name": "George Bush Intercontinental Airport",
+            "code": "IAH"
+        },
+        {
+            "name": "Harry Reid International Airport",
+            "code": "LAS"
+        },
+        {
+            "name": "Hartsfield Jackson Atlanta International Airport",
+            "code": "ATL"
+        },
+        {
+            "name": "John F. Kennedy International Airport",
+            "code": "JFK"
+        },
+        {
+            "name": "LaGuardia Airport",
+            "code": "LGA"
+        },
+        {
+            "name": "Logan International Airport",
+            "code": "BOS"
+        },
+        {
+            "name": "Los Angeles International Airport",
+            "code": "LAX"
+        },
+        {
+            "name": "Miami International Airport",
+            "code": "MIA"
+        },
+        {
+            "name": "Midway International Airport",
+            "code": "MDW"
+        },
+        {
+            "name": "Minneapolis Saint Paul International Airport",
+            "code": "MSP"
+        },
+        {
+            "name": "Nashville International Airport",
+            "code": "BNA"
+        },
+        {
+            "name": "Newark Liberty International Airport",
+            "code": "EWR"
+        },
+        {
+            "name": "O'Hare International Airport",
+            "code": "ORD"
+        },
+        {
+            "name": "Orlando International Airport",
+            "code": "MCO"
+        },
+        {
+            "name": "Philadelphia International Airport",
+            "code": "PHL"
+        },
+        {
+            "name": "Phoenix Sky Harbor International Airport",
+            "code": "PHX"
+        },
+        {
+            "name": "Salt Lake City International Airport",
+            "code": "SLC"
+        },
+        {
+            "name": "San Diego International Airport",
+            "code": "SAN"
+        },
+        {
+            "name": "San Francisco International Airport",
+            "code": "SFO"
+        },
+        {
+            "name": "Seattle Tacoma International Airport",
+            "code": "SEA"
+        },
+        {
+            "name": "Tampa International Airport",
+            "code": "TPA"
+        },
+        {
+            "name": "Washington Dulles International Airport",
+            "code": "IAD"
+        }
+]

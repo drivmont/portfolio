@@ -1,0 +1,293 @@
+* { 
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#searchError {
+    font-size: large;
+    padding-top: 20px;
+    color: red;
+    display: none;
+}
+
+#flightError {
+    font-size: large;
+    padding-top: 20px;
+    color: red;
+    display: none;
+}
+
+#calculator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #d9f0ff;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    
+}
+
+#calculatorFields {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+}
+
+#calculatorFields >* {
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 50px;
+}
+
+#calculatorFields2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#calculatorFields2 >* {
+    padding-left: 170px;
+    padding-right: 170px;
+    padding-bottom: 50px;
+}
+
+#calculator h1 {
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.option img {
+    width: 5%;
+    height: 5%;
+}
+
+
+#options .option:nth-child(odd){
+    background-color: #83c9f4;
+}
+
+#options .option:nth-child(even){
+    background-color: #d9f0ff;
+}
+
+#sites {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;   
+}
+
+#sites >* {
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 50px;
+}
+
+#siteA {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;     
+    padding-top: 10px;
+}
+
+#siteB {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;      
+}
+
+#siteA >* {
+    padding-bottom: 15px;
+    
+}
+
+#siteB >* {
+
+    padding-bottom: 10px;
+}
+
+#flightTime {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;      
+}
+
+#flightTime >* {
+    padding-bottom: 15px;
+}
+
+#options input {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+
+#savedFlights {
+    display: grid;  
+    background-color: #d9f0ff;
+    grid-template-columns: 50% 50%;
+}
+
+#saved h2{
+    text-align: center;
+    background-color: #6f73d2;
+    padding: 25px;
+}
+
+#savedFlights > div {
+    flex: 50%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    padding-bottom: 20px;
+}
+
+#savedFlights > div h3 {
+    flex: 100%;  
+    text-align: center;
+    padding: 10px;
+    font-size: x-large;
+}
+
+#savedFlights > div section {
+    font-size:  1em;
+    padding-left: 100px;
+
+}
+
+#savedFlights > div img {
+    max-width: 20%;
+    height: auto;
+
+}
+
+#savedFlights div:nth-child(odd){
+    background-color: #d9f0ff;
+    border-bottom-style: solid;
+    border-color: #6f73d2;
+}
+
+#savedFlights div:nth-child(even){
+    background-color: #83c9f4;
+    border-bottom-style: solid;
+    border-color: #6f73d2;
+}
+
+.removeFlight {
+
+    margin-right: 40px;
+}
+
+.flightSaved {
+    display: none;
+}
+
+.alreadySaved {
+    display: none;
+    color: red;
+}
+
+@media only screen and (max-width: 1030px) {
+    #calculatorFields {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    #calculatorFields2 {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    #calculatorFields >* {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 20px;
+    }
+
+    #calculatorFields2 >* {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 20px;
+    }
+
+    #calculator input {
+        align-self: flex-end;
+        margin-right: 40px;
+    }
+
+    .option img{
+        width: 15%;
+    }
+    
+    #sites >* {
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-bottom: 10px;
+    }
+    
+    .option input {
+        align-self: flex-end;
+        margin-right: 40px;
+    }
+
+    #savedFlights {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;    
+        background-color: #d9f0ff;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    #savedFlights > div {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+    }
+  
+    #savedFlights div:nth-child(odd){
+        background-color: #d9f0ff;
+    }
+    
+    #savedFlights div:nth-child(even){
+        background-color: #83c9f4;
+    }
+
+    .removeFlight {
+        margin-top: 50px;
+        margin-left: 180px;
+    }
+
+    #sites >* {
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 50px;
+    }
+  }

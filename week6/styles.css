@@ -1,3 +1,7 @@
+body {
+    background-color: #83c9f4;
+}
+
 #todos {
     display: grid;
     align-items: center;
@@ -87,4 +91,12 @@ ul li input {
 
 header {
     margin-left: 38%;
+}
+
+span {
+    padding-left: 15px;
+}
+
+#completed {
+    padding-right: 15px;
 }

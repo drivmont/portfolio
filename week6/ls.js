@@ -16,6 +16,7 @@ export function addTask(newTask,toDoList,taskViewer){
     console.log(timestamp);
     console.log(toDoList);
     toDoList.push(newObject);
+    window.localStorage.setItem('tasks', JSON.stringify(toDoList));
     clearTasks();
     loadTasks(toDoList,taskViewer);
 }
@@ -30,6 +31,7 @@ export function changeTask(event,toDoList,taskViewer){
     else{
         toDoList[index].completed = true;
     }
+    window.localStorage.setItem('tasks', JSON.stringify(toDoList));
     clearTasks();
     loadTasks(toDoList,taskViewer);
 }

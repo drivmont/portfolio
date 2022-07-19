@@ -1,12 +1,7 @@
 import {changeFilter} from './utilities.js';
 import {addTask, changeTask} from './ls.js';
 import {clearTasks, loadTasks} from './toDos.js';
-
-
-
-const toDoList = [
-
-];
+import {loadMemory} from './memory.js';
 
 let taskViewer = "active";
 
@@ -16,7 +11,8 @@ const view = {
     tasks: document.getElementById('tasks'),
     filters: document.getElementById('filters')
 }
-
+let toDoList = JSON.parse(window.localStorage.getItem('tasks'));
+loadMemory();
 loadTasks(toDoList,taskViewer);
 view.addTask.addEventListener('click', () => addTask(view.newTask.value,toDoList,taskViewer), false);
 view.tasks.addEventListener('click',(event) => changeTask(event,toDoList,taskViewer), false);

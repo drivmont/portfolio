@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style/styles.css" />
+        <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+        <title>Challenge 2</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <div id="calculator">
+            <h1>Flight Calculator</h1>
+            <div id="calculatorFields">
+                <div id="from">
+                    <label>From:</label>
+                    <select id="fromSelect">
+                    </select>
+                </div>
+                <div id="to">
+                    <label>To:</label>
+                    <select id="toSelect">
+                    </select>
+                </div>
+            </div>
+            <div id="calculatorFields2">
+                <div id="date" >
+                    <label>Date:</label>
+                    <input type="date" id="dateInput" name="date" required>
+                </div>
+                <div id="results">
+                <label>Number of results:</label>
+                    <select id="numberOfResults" name="numberOfResults">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>     
+                </div>    
+            </div>
+            <input type="button" id="submitQuery" name="submitQuery" value="Search">
+            <p id="searchError">Please select different states for the source and destination</p>
+            <p id="flightError">No flights available on this date between these two locations</p>
+        </div>
+        <div id="options">
+            
+        </div>
+        <div id="saved">
+            <h2>Saved flights</h2>
+            <div id="savedFlights">
+
+            </div>
+        </div>
+        <script type="module" src='./js/main.js'></script>
+    </body>
+</html>
